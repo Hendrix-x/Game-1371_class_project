@@ -128,7 +128,7 @@ public class Classwork_Arrays_Foreach : MonoBehaviour
         //     names from last to first.
         string[] partyMembers = { "Mark", "Jessie", "Gail", "Keith", "Becka" };
 
-        for (int p = partyMembers.Length; p == 0; p--)
+        for (int p = partyMembers.Length - 1; p == 0; p--)
         {
             Debug.Log(partyMembers[p]);
         }
@@ -147,6 +147,8 @@ public class Classwork_Arrays_Foreach : MonoBehaviour
         // C5. SORT THE LOOT: given an int[] of values in any order, rearrange
         //     them so they run from smallest to largest, then print them in order.
         int[] values = { 54, 82, 91, 55, 3, 12, 38 };
+        int startValue = values[values.Length / 2];
+        
 
         //
         // C6. FIND IN THE SORTED LOOT: using the now-sorted values from C5, look
@@ -155,6 +157,20 @@ public class Classwork_Arrays_Foreach : MonoBehaviour
         //
         // C7. PALINDROME WORD: given a word (say "level"), print whether it reads
         //     the same forwards and backwards.
-
+        string palindrome = "level";
+        int palindromeCount = 0;
+        for (int p = 0; p < palindrome.Length; p++)
+        {
+            Debug.Log(palindrome[palindrome.Length - 1 - p]);
+            Debug.Log(palindrome[p]);
+            if (palindrome[palindrome.Length - 1 - p] == palindrome[p])
+            {
+                palindromeCount += 1;
+            }
+        }
+        if (palindromeCount == palindrome.Length)
+        {
+            Debug.Log("That's a palindrome.");
+        }
     }
 }
