@@ -147,8 +147,28 @@ public class Classwork_Arrays_Foreach : MonoBehaviour
         // C5. SORT THE LOOT: given an int[] of values in any order, rearrange
         //     them so they run from smallest to largest, then print them in order.
         int[] values = { 54, 82, 91, 55, 3, 12, 38 };
-        int startValue = values[values.Length / 2];
-        
+        for (int a = 0; a < values.Length - 1; a++)
+        {
+            int valueCheck = 1;
+            for (int v = 0; v < values.Length - valueCheck; v++)
+            {
+                if (values[v] > values[v + 1])
+                {
+                    int storage = values[v + 1];
+                    values[v + 1] = values[v];
+                    values[v] = storage;
+                }
+            }
+            valueCheck++;
+        }
+        foreach (int va in values)
+        {
+            Debug.Log("value: " + va);
+        }
+        // 4 3 2 1
+        // 3 4 1 2
+        // 3 1 2 4
+        // 1 2 3 4
 
         //
         // C6. FIND IN THE SORTED LOOT: using the now-sorted values from C5, look
